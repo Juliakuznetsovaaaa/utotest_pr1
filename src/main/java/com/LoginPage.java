@@ -19,7 +19,7 @@ public class LoginPage{
     private WebElement loginField;
 
     @FindBy(xpath = "//*[contains(@value, 'Войти в Одноклассники')]")
-    private WebElement loginBtn;
+    WebElement loginBtn;
 
     @FindBy(xpath = "//*[contains(@id, 'field_password')]")
     private WebElement passwdField;

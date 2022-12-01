@@ -15,67 +15,36 @@ import java.time.Duration;
 public class profilePage{
    public WebDriver driver;
 
-    //private static Object DELETE = deleteBut;
-    //private static final Object FEED_MENU = deleteIcon;
-
-    public profilePage(WebDriver driver) {
+    public profilePage(WebDriver driver)  {
        PageFactory.initElements(driver, this);
         this.driver = driver;
    }
 
     @FindBy(xpath = "//*[contains(@href, '/post')]")
-    private WebElement notionBtm;
+    WebElement notionBtm;
 
-    @FindBy(xpath = "//*[@id=\"hook_Block_Navigation\"]/div/div/div[1]/a/div/text()")
-    private WebElement userMenu;
     @FindBy(xpath = "//*[@id=\"hook_Block_Navigation\"]/div/div/div[1]/a")
     private WebElement userName;
 
-    //@FindBy(xpath = "//*[@id=\"hook_Block_pfnull\"]/div[2]/div[1]/div/div/div[2]")
     @FindBy(xpath = "//*[contains(@class, 'posting_itx emoji-tx h-mod js-ok-e js-posting-itx ok-posting-handler')]")
-    private WebElement zametkaField;
+     WebElement notionField;
 
     @FindBy (xpath = "//*[contains(@data-l, 't,button.submit')]")
     WebElement pushBtm;
 
-    @FindBy(xpath = "//*[contains(@class, 'media-text_cnt_tx emoji-tx textWrap')]")
+    @FindBy(xpath = "/html/body/div[10]/div[5]/div[5]/div[1]/div/div[2]/div[1]/div[3]/div[2]/div[1]/div/div[3]/div/div/div/div[3]/div/div[4]/div[1]/div[1]/div[1]/div/div[3]/div[1]/div/div/div")
     WebElement notionText;
-
-    public void inputZametka(String passwd) {
-        zametkaField.sendKeys(passwd); }
-
-    public void clickNotionBtm(){
-        notionBtm.click();
-    }
-
-    public void clickUserMenu(){
-        userMenu.click();
-    }
 
     public String getUserName() {
         String name = userName.getText();
         return name;
     }
 
-    public String getNotionText() {
-        String notion = notionText.getText();
-        return notion;
-    }
-    public void setPushBtm() {
-        pushBtm.click();
-    }
     @FindBy(xpath = ".//*[@class='feed_menu']")
     WebElement deleteIcon;
 
     @FindBy (xpath = "/html/body/div[40]/div/ul")
     WebElement menu;
-
-    @FindBy (xpath = ".//*[text()='Удалить заметку']")
-    WebElement deleteBut;
-
-    public void clickDeleteBut(){
-        deleteBut.click();
-    }
 
     public void deleteNotion(){
         Actions action = new Actions(driver);

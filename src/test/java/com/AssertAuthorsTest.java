@@ -7,6 +7,7 @@ import java.util.concurrent.TimeUnit;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.jupiter.api.Tag;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.openqa.selenium.WebDriver;
@@ -17,9 +18,9 @@ import org.openqa.selenium.support.PageFactory;
 public class AssertAuthorsTest extends BaseTest{
     private String authorName;
     private String authorSurname;
-    //public WebDriver driver;
-    private MusicTest musicTest;
 
+    private MusicTest musicTest;
+    //Value Object
     public AssertAuthorsTest(String authorName,String authorSurname){
         this.authorName = authorName;
         this.authorSurname=authorSurname;
@@ -34,6 +35,7 @@ public class AssertAuthorsTest extends BaseTest{
         return Arrays.asList(new Object[][] {{"Thomas", "Mraz"},{"Taylor", "Swift"},{"Selena","Gomez"}});
 
     }
+    @Tag("Authors test assertion")
     @Test
     public void testAssertion(){
         musicTest.assertAuthors(authorName, authorSurname);
