@@ -2,13 +2,11 @@ package com;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage{
+public class LoginPage {
     public WebDriver driver;
-
 
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -16,28 +14,25 @@ public class LoginPage{
     }
 
     @FindBy(xpath = "//*[contains(@id, 'field_email')]")
-    private WebElement loginField;
+    WebElement loginField;
 
     @FindBy(xpath = "//*[contains(@value, 'Войти в Одноклассники')]")
     WebElement loginBtn;
 
     @FindBy(xpath = "//*[contains(@id, 'field_password')]")
-    private WebElement passwdField;
+    WebElement passwordField;
 
     public void inputLogin(String login) {
         loginField.sendKeys(login);
     }
 
-    public void inputPasswd(String passwd) {
+    public void inputPassword(String passwd) {
 
-        passwdField.sendKeys(passwd);
+        passwordField.sendKeys(passwd);
     }
 
     public void clickLoginBtn() {
-
         loginBtn.click();
     }
-
-
 
 }

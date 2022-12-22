@@ -15,15 +15,32 @@
 <build>
     <sourceDirectory>src/main/java</sourceDirectory>
 </build>
-<!-- https://mvnrepository.com/artifact/com.codeborne/selenide -->
+
+
 <dependencies>
-    <!-- https://mvnrepository.com/artifact/junit/junit -->
+    <dependency>
+        <groupId>info.cukes</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>1.2.4</version>
+    </dependency>
     <dependency>
         <groupId>junit</groupId>
         <artifactId>junit</artifactId>
-        <version>4.13.2</version>
-        <scope>test</scope>
+        <version>4.12</version>
     </dependency>
+    <dependency>
+        <groupId>info.cukes</groupId>
+        <artifactId>cucumber-junit</artifactId>
+        <version>1.2.4</version>
+    </dependency>
+
+
+
+
+
+
+
+
     <!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
     <dependency>
         <groupId>org.junit.jupiter</groupId>
@@ -59,8 +76,6 @@
         <artifactId>webdrivermanager</artifactId>
         <version>5.0.1</version>
     </dependency>
-
-
 
 </dependencies>
 
